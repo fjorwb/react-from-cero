@@ -16,11 +16,11 @@ export default function App () {
     <div>
       <h1>Cat Fact</h1>
       <button type='text' onClick={handleNewCatFact}>
-        new cat fact
+        Get new fact
       </button>
       <section>
         {fact && <p>{fact}</p>}
-        {loading && <p>loading...</p>}
+        {loading && <h3>loading...</h3>}
         {imageUrl && <img src={imageUrl} alt='img' />}
       </section>
     </div>
