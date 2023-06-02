@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import './App.css'
 
 import useFacts from './hooks/useFacts'
@@ -7,10 +8,10 @@ export default function App () {
   const { fact, refreshFact } = useFacts()
   const { imageUrl, loading, setLoading } = useImage({ fact })
 
-  const handleNewCatFact = () => {
+  const handleNewCatFact = useCallback(() => {
     setLoading(true)
     refreshFact()
-  }
+  }, [refreshFact])
 
   return (
     <div>
